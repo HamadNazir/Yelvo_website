@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yelvo - Empowering Local Services</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        .hero-gradient {
+            background: linear-gradient(135deg, #f9d423 0%, #ff4e50 100%);
+        }
+        .animate-float {
+            animation: float 3s ease-in-out infinite;
+        }
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        .section-transition {
+            transition: all 0.5s ease;
+        }
+        .section-transition:hover {
+            transform: translateY(-5px);
+        }
+    </style>
+</head>
+<body class="font-sans text-gray-800 bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-sm fixed w-full z-10">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <div class="text-2xl font-bold text-yellow-500">Yelvo<span class="text-gray-800"></span></div>
+                </div>
+                <div class="flex items-center">
+                    <button id="waitlistButton" class="bg-orange-500 hover:bg-orange-600 text-white font-medium py-2 px-4 rounded-lg transition">
+                        Join Waitlist
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-gradient text-white pt-24 pb-20 px-4">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0">
+                    <h1 class="text-4xl md:text-5xl font-bold leading-tight mb-4">Connect With Local Services & Shops</h1>
+                    <p class="text-lg md:text-xl mb-8 text-yellow-100">Empowering small businesses and local services with a free digital presence.</p>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <button id="joinButton" class="bg-white text-orange-500 hover:bg-gray-100 font-bold py-3 px-6 rounded-lg transition">
+                            Join Now (<span id="joinCounter">10,000+</span>)
+                        </button>
+                        <button id="learnMoreButton" class="border-2 border-white text-white hover:bg-white hover:text-orange-500 font-bold py-3 px-6 rounded-lg transition">
+                            Learn More
+                        </button>
+                    </div>
+                </div>
+                <div class="md:w-1/2 flex justify-center">
+                    <div class="bg-white p-6 rounded-xl shadow-xl animate-float">
+                        <div class="bg-gray-100 p-4 rounded-lg mb-4">
+                            <div class="flex items-center mb-2">
+                                <div class="w-12 h-12 bg-yellow-100 rounded-full flex items-center justify-center text-yellow-500">
+                                    <i class="fas fa-bolt text-xl"></i>
+                                </div>
+                                <div class="ml-3">
+                                    <h3 class="text-lg font-semibold text-gray-800">Ahmed's Electrical</h3>
+                                    <div class="flex text-yellow-500">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star-half-alt"></i>
+                                        <span class="text-gray-600 text-sm ml-1">(24)</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="text-gray-600 text-sm">Electrical repairs, wiring, installations. Available 24/7 for emergencies.</p>
+                            <div class="mt-2 text-sm text-gray-500">
+                                <i class="fas fa-map-marker-alt mr-1"></i> 1.2 km away
+                            </div>
+                        </div>
+                        <div class="bg-gray-100 p-4 rounded-lg">
+                            <div class="flex items-center mb-2">
+                                <div class="w-12 h-12 bg-yellow-100 rounded-full flex items-center justify-center text-yellow-500">
+                                    <i class="fas fa-shirt text-xl"></i>
+                                </div>
+                                <div class="ml-3">
+                                    <h3 class="text-lg font-semibold text-gray-800">Sara's Tailoring</h3>
+                                    <div class="flex text-yellow-500">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <span class="text-gray-600 text-sm ml-1">(37)</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="text-gray-600 text-sm">Custom stitching, alterations and repairs. Specializes in wedding dresses.</p>
+                            <div class="mt-2 text-sm text-gray-500">
+                                <i class="fas fa-map-marker-alt mr-1"></i> 0.8 km away
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Yelvo Section -->
+    <section class="py-16 px-4">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold mb-4">Why Yelvo?</h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">Yelvo is built to help local businesses thrive by providing them with a free, user-friendly platform. Our mission is to connect small businesses and workers with the community by offering a reliable online presence.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-xl shadow-sm section-transition">
+                    <div class="w-12 h-12 bg-yellow-100 rounded-full flex items-center justify-center text-yellow-500 mb-4">
+                        <i class="fas fa-store text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Digital Presence</h3>
+                    <p class="text-gray-600">Give every skilled individual or small business a Google-like online identity — without needing their own website.</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-xl shadow-sm section-transition">
+                    <div class="w-12 h-12 bg-yellow-100 rounded-full flex items-center justify-center text-yellow-500 mb-4">
+                        <i class="fas fa-map-marker-alt text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Local Discovery</h3>
+                    <p class="text-gray-600">Find trusted, nearby services with transparent ratings, service descriptions, and direct contact.</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-xl shadow-sm section-transition">
+                    <div class="w-12 h-12 bg-yellow-100 rounded-full flex items-center justify-center text-yellow-500 mb-4">
+                        <i class="fas fa-users text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Community Trust</h3>
+                    <p class="text-gray-600">Build trust through real customer feedback and reviews from your own community.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Features Section -->
+    <section id="features" class="py-16 px-4 bg-gray-100">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold mb-4">Key Features</h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">Everything you need to connect with local service providers.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="bg-white p-6 rounded-lg shadow-sm">
+                    <div class="text-yellow-500 mb-3"><i class="fas fa-list-alt text-2xl"></i></div>
+                    <h3 class="text-xl font-semibold mb-2">Free Digital Storefronts</h3>
+                    <p class="text-gray-600">Create a profile even without owning a physical shop or website.</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-lg shadow-sm">
+                    <div class="text-yellow-500 mb-3"><i class="fas fa-star text-2xl"></i></div>
+                    <h3 class="text-xl font-semibold mb-2">Ratings & Reviews</h3>
+                    <p class="text-gray-600">Build trust through real customer feedback.</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-lg shadow-sm">
+                    <div class="text-yellow-500 mb-3"><i class="fas fa-tags text-2xl"></i></div>
+                    <h3 class="text-xl font-semibold mb-2">Category Tags</h3>
+                    <p class="text-gray-600">Easily find electricians, barbers, tutors, tailors, and more.</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-lg shadow-sm">
+                    <div class="text-yellow-500 mb-3"><i class="fas fa-mobile-alt text-2xl"></i></div>
+                    <h3 class="text-xl font-semibold mb-2">Mobile-Optimized UI</h3>
+                    <p class="text-gray-600">Easy access from any smartphone.</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-lg shadow-sm">
+                    <div class="text-yellow-500 mb-3"><i class="fas fa-location-arrow text-2xl"></i></div>
+                    <h3 class="text-xl font-semibold mb-2">Search Nearby</h3>
+                    <p class="text-gray-600">Location-based discovery for users.</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-lg shadow-sm">
+                    <div class="text-yellow-500 mb-3"><i class="fas fa-certificate text-2xl"></i></div>
+                    <h3 class="text-xl font-semibold mb-2">Verification Badges</h3>
+                    <p class="text-gray-600">Coming soon: Service verification for trusted providers.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="py-16 px-4">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold mb-4">How It Works</h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">Simple. Convenient. Transparent.</p>
+            </div>
+            
+            <div class="flex flex-col md:flex-row items-center justify-between gap-8">
+                <div class="w-full md:w-1/2">
+                    <div class="bg-gray-100 p-6 rounded-xl">
+                        <div class="w-16 h-16 bg-yellow-500 rounded-full text-white flex items-center justify-center text-2xl font-bold mb-4">1</div>
+                        <h3 class="text-xl font-semibold mb-2">🔎 Search for Local Services</h3>
+                        <p class="text-gray-600 mb-8">Find services based on category and location to discover help nearby.</p>
+                        
+                        <div class="w-16 h-16 bg-yellow-500 rounded-full text-white flex items-center justify-center text-2xl font-bold mb-4">2</div>
+                        <h3 class="text-xl font-semibold mb-2">🛠️ View Detailed Profiles</h3>
+                        <p class="text-gray-600 mb-8">Check ratings, reviews, and service details to make informed decisions.</p>
+                        
+                        <div class="w-16 h-16 bg-yellow-500 rounded-full text-white flex items-center justify-center text-2xl font-bold mb-4">3</div>
+                        <h3 class="text-xl font-semibold mb-2">📞 Contact Directly</h3>
+                        <p class="text-gray-600">Connect with service providers without middlemen or extra fees.</p>
+                    </div>
+                </div>
+                
+                <div class="w-full md:w-1/2 flex justify-center">
+                    <div class="bg-white p-4 rounded-xl shadow-lg">
+                        <div class="bg-gray-100 rounded-xl p-2">
+                            <div class="bg-white rounded-lg shadow-sm p-4 mb-4">
+                                <div class="flex justify-between items-center mb-3">
+                                    <h4 class="font-semibold">Find Services</h4>
+                                    <i class="fas fa-search text-yellow-500"></i>
+                                </div>
+                                <div class="border rounded-lg p-2 mb-3">
+                                    <div class="text-sm text-gray-500">I need a...</div>
+                                    <div class="font-medium">Electrician</div>
+                                </div>
+                                <div class="border rounded-lg p-2">
+                                    <div class="text-sm text-gray-500">Near</div>
+                                    <div class="font-medium">Current Location</div>
+                                </div>
+                            </div>
+                            
+                            <div class="rounded-lg overflow-hidden shadow-sm">
+                                <img src="map.jpg" alt="App interface showing search results" class="w-full">
+                                <div class="bg-white p-4">
+                                    <div class="text-center font-medium text-gray-600">Search results within 2km</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Comparison Section -->
+    <section class="py-16 px-4 bg-gray-100">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold mb-4">How We're Different</h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">Comparing Yelvo with existing platforms</p>
+            </div>
+            
+            <div class="overflow-x-auto">
+                <table class="min-w-full bg-white rounded-xl shadow-sm">
+                    <thead>
+                        <tr class="bg-yellow-500 text-white">
+                            <th class="py-4 px-6 text-left">Feature</th>
+                            <th class="py-4 px-6 text-center">Other Platforms</th>
+                            <th class="py-4 px-6 text-center">Yelvo</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="border-b">
+                            <td class="py-4 px-6 font-medium">Ownership</td>
+                            <td class="py-4 px-6 text-center">Platform-managed profiles</td>
+                            <td class="py-4 px-6 text-center text-yellow-500 font-medium">Independent profiles</td>
+                        </tr>
+                        <tr class="border-b bg-gray-50">
+                            <td class="py-4 px-6 font-medium">Shop Inclusion</td>
+                            <td class="py-4 px-6 text-center">Limited</td>
+                            <td class="py-4 px-6 text-center text-yellow-500 font-medium">Open to all businesses</td>
+                        </tr>
+                        <tr class="border-b">
+                            <td class="py-4 px-6 font-medium">Google Map Visibility</td>
+                            <td class="py-4 px-6 text-center">Limited</td>
+                            <td class="py-4 px-6 text-center text-yellow-500 font-medium">Focused</td>
+                        </tr>
+                        <tr class="border-b bg-gray-50">
+                            <td class="py-4 px-6 font-medium">Freedom for Providers</td>
+                            <td class="py-4 px-6 text-center">Restricted</td>
+                            <td class="py-4 px-6 text-center text-yellow-500 font-medium">Full Freedom</td>
+                        </tr>
+                        <tr>
+                            <td class="py-4 px-6 font-medium">Trust Factor</td>
+                            <td class="py-4 px-6 text-center">Brand reliance</td>
+                            <td class="py-4 px-6 text-center text-yellow-500 font-medium">Real user ratings</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Join the Movement Section -->
+    <section class="py-16 px-4">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold mb-4">Join the Yelvo Movement</h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">Each click represents one more person supporting local talent and small businesses. Show your support and be part of a new future where local heroes thrive with Yelvo!</p>
+            </div>
+            
+            <div class="bg-white rounded-xl p-6 shadow-md text-center">
+                <div class="text-yellow-500 text-4xl font-bold mb-4" id="movementCounter">10,000+</div>
+                <p class="text-xl mb-6">people have already joined the movement!</p>
+                <button id="joinMovementButton" class="bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-3 px-6 rounded-lg transition">
+                    Join the Movement
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Placeholder Section -->
+    <section class="py-16 px-4 bg-gray-100">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold mb-4">See Yelvo in Action</h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">Coming soon: Watch how Yelvo empowers service providers and connects communities.</p>
+            </div>
+            
+            <div class="bg-white rounded-xl p-6 flex items-center justify-center h-64 md:h-96 shadow-md">
+                <div class="text-center">
+                    <div class="w-20 h-20 bg-yellow-500 rounded-full flex items-center justify-center text-white mx-auto mb-4">
+                        <i class="fas fa-video text-2xl"></i>
+                    </div>
+                    <p class="text-gray-600">Video coming soon</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Join Waitlist Section -->
+    <section class="py-16 px-4 bg-yellow-500 text-white">
+        <div class="max-w-7xl mx-auto text-center">
+            <h2 class="text-3xl font-bold mb-4">Be the First to Join Yelvo</h2>
+            <p class="text-lg text-yellow-100 max-w-2xl mx-auto mb-8">Be Part of the Yelvo Change 🚀</p>
+            
+            <div class="max-w-md mx-auto">
+                <button id="finalJoinButton" class="bg-white text-yellow-500 hover:bg-gray-100 font-bold py-3 px-8 rounded-lg transition text-xl">
+                    Join Yelvo Now
+                </button>
+                <p class="text-lg mt-4"><span id="finalCounter">10,000+</span> people have already joined!</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Information -->
+    <section class="py-12 px-4 bg-white">
+        <div class="max-w-7xl mx-auto text-center">
+            <h2 class="text-2xl font-bold mb-6">Contact Us</h2>
+            <div class="flex flex-col items-center justify-center space-y-2">
+                <p class="text-lg font-medium">Hamad Nazeer</p>
+                <p><i class="fas fa-phone mr-2"></i>+923094627102</p>
+                <p><i class="fas fa-envelope mr-2"></i>hamadnazeer05@gmail.com</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8 px-4">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col items-center justify-center">
+                <h3 class="text-2xl font-bold mb-4">Yelvo<span class="text-yellow-400"></span></h3>
+                <p class="text-gray-400 text-center mb-6">Empowering local services and shops with a digital presence.</p>
+                
+                <div class="flex space-x-4 mb-6">
+                    <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-facebook"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-linkedin"></i></a>
+                </div>
+                
+                <div class="text-gray-400">© 2025 Yelvo. Empowering Local Dreams. All rights reserved.</div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Set consistent counter value across all elements
+            const userCount = "10,000+";
+            
+            // Get all counter elements
+            const counterElements = [
+                document.getElementById("joinCounter"),
+                document.getElementById("movementCounter"),
+                document.getElementById("finalCounter")
+            ];
+            
+            // Update all counter elements with the same value
+            counterElements.forEach(element => {
+                if (element) {
+                    element.textContent = userCount;
+                }
+            });
+            
+            // Get all join buttons
+            const joinButtons = [
+                document.getElementById("joinButton"),
+                document.getElementById("joinMovementButton"),
+                document.getElementById("finalJoinButton"),
+                document.getElementById("waitlistButton")
+            ];
+            
+            // Function to handle join action - shows confirmation
+            function handleJoin() {
+                alert("Thanks for your interest in Yelvo!");
+                
+                // Update buttons to joined state
+                joinButtons.forEach(btn => {
+                    if (btn) {
+                        btn.textContent = "Joined ✓";
+                        btn.classList.add("bg-green-500", "text-white");
+                        btn.classList.remove("bg-yellow-500", "hover:bg-yellow-600", 
+                                            "bg-orange-500", "hover:bg-orange-600",
+                                            "bg-white", "text-orange-500", "text-yellow-500", 
+                                            "hover:bg-gray-100");
+                        btn.disabled = true;
+                    }
+                });
+            }
+            
+            // Add event listeners to all join buttons
+            joinButtons.forEach(btn => {
+                if (btn) {
+                    btn.addEventListener("click", handleJoin);
+                }
+            });
+            
+            // Smooth scrolling for Learn More button
+            const learnMoreButton = document.getElementById("learnMoreButton");
+            if (learnMoreButton) {
+                learnMoreButton.addEventListener("click", function() {
+                    document.getElementById("features").scrollIntoView({ behavior: "smooth" });
+                });
+            }
+        });
+    </script>
+</body>
+</html>
